@@ -1,0 +1,30 @@
+let nftCollection = [];
+
+function createNFT(name, creator, creationDate, details) {
+    const nft = {
+        name: name,
+        creator: creator,
+        creationDate: creationDate,
+        details: details
+    };
+    nftCollection.push(nft);
+}
+function displayNFTs() {
+    nftCollection.forEach(nft => {
+        console.log(`Name: ${nft.name}`);
+        console.log(`Creator: ${nft.creator}`);
+        console.log(`Creation Date: ${nft.creationDate}`);
+        console.log(`Details: ${nft.details}`);
+        console.log("--------------------------");
+    });
+}
+function getTotalSupply() {
+    return nftCollection.length;
+}
+createNFT("Girl with a Pearl Earring", "Neymar", "1665", "A painting of a girl wearing a pearl earring");
+createNFT("The Scream", "Encore", "1893", "An expressionist painting showing a figure with an upset expression");
+createNFT("Dragon", "Calm", "1937", "A powerful political statement on the uprising of the dragons");
+
+displayNFTs();
+
+console.log(`Total Supply: ${getTotalSupply()}`);
